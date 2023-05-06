@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+  config.html은 <head> 안에 들어갈 내용을 선언한다.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<th:block th:fragment="configFragment">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- common css -->
+    <style>
+      <!-- common css -->
+    </style>
+    <th:block layout:css="css"></th:block>
+    <script>
+      // common js
+      console.log('common js');
+    </script>
+    <th:block layout:fragment="script"></th:block>
+  </head>
+</th:block>
+</html>

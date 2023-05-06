@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default_layout}"
+>
+<head>
+  <style>
+    <!-- main.style -->
+  </style>
+  <script>
+    //main script
+    console.log('main');
+  </script>
+</head>
+<div>
+  <th:block layout:fragment="content">
+    contents
+  </th:block>
+</div>
+</html>
