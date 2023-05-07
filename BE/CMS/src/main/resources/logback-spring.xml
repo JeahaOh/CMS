@@ -22,24 +22,34 @@
               value="[%d{YYYY.MM.dd HHmmss}:%-3relative] %-5level ${PID:-} --- [%15.15thread] %-40.40logger{36} : %msg%n"/>
     
     <!-- file 출력 -->
-    <appender name="FILEOUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="FILE_OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- file 저장 위치 -->
-        <file>${LOGS_SAVE_ABSOLUTE_PATH}/logback.log</file>
+        <file>${LOGS_SAVE_ABSOLUTE_PATH}/application.log</file>
         <!-- log encoding -->
         <encoder>
             <pattern>${FILE_LOG_PATTERN}</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rolling -->
-            <fileNamePattern>log.%d{yyyyMMdd}.out</fileNamePattern>
+            <fileNamePattern>${LOGS_SAVE_ABSOLUTE_PATH}/application-%d{yyyyMMdd}.log</fileNamePattern>
             <!-- rolling -->
-            <maxHistory>7</maxHistory>
-            <totalSizeCap>1GB</totalSizeCap>
+            <maxHistory>3</maxHistory>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+            <totalSizeCap>10MB</totalSizeCap>
         </rollingPolicy>
+    </appender>
+
+    <!-- 비동기 파일 출력 -->
+    <appender name="ASYNC_FILE_OUT" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="FILE_OUT" />
+        <includeCallerData>false</includeCallerData>
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>1024</queueSize>
+        <neverBlock>true</neverBlock>
     </appender>
 
     <root level="debug">
         <appender-ref ref="STDOUT"/>
-        <appender-ref ref="FILEOUT"/>
+        <appender-ref ref="ASYNC_FILE_OUT"/>
     </root>
 </configuration>
