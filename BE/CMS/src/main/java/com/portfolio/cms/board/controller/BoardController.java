@@ -1,4 +1,4 @@
-package com.portfolio.cms.board;
+package com.portfolio.cms.board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
