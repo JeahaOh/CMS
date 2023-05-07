@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ThymeleafTestController {
     @RequestMapping("/test")
     public String test() {
-        log.debug("LOG");
+        log.trace("trace log");
+        log.debug("debug LOG");
+        log.info("info LOG");
+        log.warn("warn LOG");
+        log.error("error LOG");
         return "main/main";
     }
 }
