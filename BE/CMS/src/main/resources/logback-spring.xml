@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<configuration>
+<configuration debug="true" scan="true" scanPeriod="1 minutes">
     <!-- console 출력용 로그 패턴에 색상 적용 converter -->
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
 
