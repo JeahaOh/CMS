@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.ort/1999/xhtml"
+  xmlns:th='http://www.thymeleaf.org'
+  xmlns:layout='http://www.ultraq.net.nz/thymeleaf/layout'
+  layout:decorate='~{layout/default_layout}'
+>
+  <div layout:fragment="content" class="content">
+    <nav class="container">
+      <div class="input-group">
+        <input type="text" name="" id="" class="form-control" placeholder="input title"/>
+        <button type="submit" class="btn btn-secondary">search</button>
+      </div>
+      <form action="">
+        <table class="table table-hover">
+          <colgroup>
+            <col width="2%"/>
+            <col width="5%"/>
+            <col width="20%"/>
+            <col width="5%"/>
+            <col width="5%"/>
+            <col width="5%"/>
+            <col width="5%"/>
+          </colgroup>
+          <thead>
+            <tr>
+              <th>
+                <label for="" class="checkbox-inline">
+                  <input type="checkbox" name="" id="allCheckBox" class="chk" />
+                </label>
+              </th>
+              <th>NO</th>
+              <th>title</th>
+              <th>author</th>
+              <th>regist date</th>
+              <th>read count</th>
+              <th>file</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <label for="" class="checkbox-inline">
+                  <input type="checkbox" class="chk" name="chk" value="" />
+                </label>
+              </td>
+              <td>1</td>
+              <td>
+                <a href="javascript:void();">title</a>
+              </td>
+              <td>
+                author name
+              </td>
+              <td>2023.05.07</td>
+              <td>1</td>
+              <td>image</td>
+            </tr>
+          </tbody>
+        </table>
+        <nav class="container d-flex align-items-center justify-content-center" aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="javascript:void();" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="javascript:void();"
+              >1</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="javascript:void();"
+              >2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="javascript:void();"
+              >3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="javascript:void();" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="d-flex justify-content-end">
+          <a href="javascript:void();" class="btn btn-danger">DELETE</a>
+          <a href="/write" class="btn btn-primary">WRITE</a>
+        </div>
+      </form>
+    </nav>
+  </div>
+</html>
