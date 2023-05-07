@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-    <!-- 로그 패턴에 색상 적용 converter -->
+    <!-- console 출력용 로그 패턴에 색상 적용 converter -->
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
 
-    <!-- 색상을 적용한 로그 패턴 -->
+    <!-- console 출력용 색상을 적용 로그 패턴 -->
     <property name="COLOR_LOG_PATTERN"
               value="[%d{YYYY.MM.dd HHmmss}:%-3relative] %highlight(%-5level) %clr(${PID:-}){magenta} %clr(---){faint} %clr([%15.15thread]){faint} %clr(%-40.40logger{36}){cyan} %clr(:){faint} %msg%n"/>
 
+    <!-- console 출력 (STDOUT) -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>${COLOR_LOG_PATTERN}</Pattern>
         </layout>
     </appender>
+
+    <!-- log file 저장 절대경로 -->
+    <property name="LOGS_SAVE_ABSOLUTE_PATH" value=".logs"/>
+    
+    <!-- log file 저장용 로그 패턴 -->
+    <property name="FILE_LOG_PATTERN"
+              value="[%d{YYYY.MM.dd HHmmss}:%-3relative] %-5level ${PID:-} --- [%15.15thread] %-40.40logger{36} : %msg%n"/>
+    
+    <!-- file 출력 -->
+    <appender name="FILEOUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- file 저장 위치 -->
+        <file>${LOGS_SAVE_ABSOLUTE_PATH}/logback.log</file>
+        <!-- log encoding -->
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rolling -->
+            <fileNamePattern>log.%d{yyyyMMdd}.out</fileNamePattern>
+            <!-- rolling -->
+            <maxHistory>7</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
     <root level="debug">
         <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILEOUT"/>
     </root>
 </configuration>
