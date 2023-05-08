@@ -1,4 +1,4 @@
-package com.portfolio.cms.webTest.domain.posts;
+package com.portfolio.cms.webTest.posts.vo;
 
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -27,5 +27,10 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+    
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }

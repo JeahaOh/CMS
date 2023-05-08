@@ -1,5 +1,7 @@
 package com.portfolio.cms.webTest.domain.posts;
 
+import com.portfolio.cms.webTest.posts.vo.Posts;
+import com.portfolio.cms.webTest.posts.repository.PostsRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
