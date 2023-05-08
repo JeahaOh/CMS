@@ -1,4 +1,4 @@
-package com.portfolio.cms.webTest.dto;
+package com.portfolio.cms.webTest.Hello.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

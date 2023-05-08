@@ -1,6 +1,6 @@
-package com.portfolio.cms.webTest;
+package com.portfolio.cms.webTest.Hello;
 
-import com.portfolio.cms.webTest.dto.HelloResponseDto;
+import com.portfolio.cms.webTest.Hello.dto.HelloResponseDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,5 +1,6 @@
 package com.portfolio.cms.webTest.dto;
 
+import com.portfolio.cms.webTest.Hello.dto.HelloResponseDto;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
