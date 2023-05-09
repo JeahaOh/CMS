@@ -366,3 +366,4 @@ out/
 /.nb-gradle/
 
 .logs/
+application-oauth.properties

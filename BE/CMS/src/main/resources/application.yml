@@ -13,11 +13,26 @@ spring:
         show_sql: true
         format_sql: true
 
+  # include application-oauth.properties
+  profiles:
+    include: oauth
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            # @TODO yml 파일 분리하기.
+            # client-id: { client-id }
+            # client-secret: { client-secret }
+            # scope:
+            #   - email
+            #   - profile
+
 logging:
   level:
     root: debug
     org.hibernate.SQL: debug
-
 
 livereload:
   enabled: true
