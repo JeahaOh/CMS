@@ -1,10 +1,21 @@
 {{>mustache/layout/header}}
 
-<h1>regist post</h1>
+<h1>edit post</h1>
 
 <div class="col-md-12">
   <div class="col-md-4">
     <form>
+      <div class="form-group">
+        <label for="id">post no</label>
+        <input
+          type="text"
+          name="id" id="id"
+          class="form-control"
+          value="{{post.id}}"
+          readonly
+        />
+      </div>
+
       <div class="form-group">
         <label for="title">title</label>
         <input
@@ -12,9 +23,10 @@
           name="title" id="title"
           class="form-control"
           placeholder="input title"
+          value="{{post.title}}"
         />
       </div>
-      
+
       <div class="form-group">
         <label for="author">author</label>
         <input
@@ -22,6 +34,8 @@
           name="author" id="author"
           class="form-control"
           placeholder="input author"
+          value="{{post.author}}"
+          readonly
         />
       </div>
 
@@ -31,14 +45,18 @@
           name="content" id="content"
           class="form-control"
           placeholder="input content"
-        ></textarea>
+        >{{post.content}}</textarea>
       </div>
+
     </form>
 
     <a href="/" role="button" class="btn btn-secondary">cancel</a>
     <button type="button" class="btn btn-primary"
-      id="btn-save"
-    >regist</button>
+      id="btn-update"
+    >update</button>
+    <button type="button" class="btn btn-danger"
+      id="btn-delete"
+    >delete</button>
 
   </div>
 </div>
