@@ -9,4 +9,9 @@ public class IndexController {
     public String index() {
         return "mustache/index";
     }
+    
+    @GetMapping("/posts/save")
+    public String postsSave() {
+        return "mustache/posts-save";
+    }
 }

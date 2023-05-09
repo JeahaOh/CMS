@@ -17,3 +17,7 @@ logging:
   level:
     root: debug
     org.hibernate.SQL: debug
+
+
+livereload:
+  enabled: true
