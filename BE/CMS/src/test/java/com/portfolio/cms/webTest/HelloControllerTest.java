@@ -1,13 +1,17 @@
 package com.portfolio.cms.webTest;
 
-import com.portfolio.cms.webTest.Hello.HelloController;
+import com.portfolio.cms.webTest.hello.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -39,5 +43,14 @@ public class HelloControllerTest {
             ).andExpect(status().isOk())
             .andExpect(jsonPath("$.name", is(name)))
             .andExpect(jsonPath("$.amount", is(amount)));
+    }
+    
+    @Test
+    public void status_check_return_ok() {
+        TestRestTemplate rest = new TestRestTemplate();
+        ResponseEntity<String> res = rest.getForEntity("/status", String.class);
+        
+        assertThat(res.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(res.getBody()).isEqualTo("ok");
     }
 }
