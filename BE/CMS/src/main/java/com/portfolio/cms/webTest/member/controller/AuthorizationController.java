@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.*;
 public class AuthorizationController {
     private final RegisterMemberService registerMemberService;
     
-
-    
     @PostMapping("/join")
     public ResponseEntity<String> join(@RequestBody MemberJoinDto dto) {
         log.debug("dto : {}", dto);

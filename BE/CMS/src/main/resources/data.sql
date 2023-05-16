@@ -1,0 +1,3 @@
+insert into member (member_id, pwd, role) values ('test', '558f03d9bbd21109354ddf6d53fe9c0b74ed33d283f800c887706b20cb633401823d97271349d6e9a3489abfac91e594d3f6b100f9ad2a3ff71fc99e87d0831e', 'ADMIN');
+insert into member (member_id, pwd, role) values ('test2', '401b09eab3c013d4ca54922bb802bec8fd5318192b0a75f201d8b3727429080fb337591abd3e44453b954555b7a0812e1081c39b740293f765eae731f5a65ed1', 'USER');
+insert into member (member_id, pwd, role) values ('test3', '401b09eab3c013d4ca54922bb802bec8fd5318192b0a75f201d8b3727429080fb337591abd3e44453b954555b7a0812e1081c39b740293f765eae731f5a65ed1', 'ADMIN');

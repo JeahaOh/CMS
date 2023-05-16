@@ -22,13 +22,13 @@ public class LoginController {
         return "mustache/auth/login";
     }
     
-    @PostMapping("/login")
-    public String loginProcess(MemberLoginDto dto) {
-        boolean isValidMember = memberService.isValidMember(dto.getUserId(), dto.getPwd());
-        log.debug("isValidMember : {}", isValidMember);
-        if (isValidMember == false) return "mustache/auth/login";
-        return "redirect:/";
-    }
+//    @PostMapping("/login")
+//    public String loginProcess(MemberLoginDto dto) {
+//        boolean isValidMember = memberService.isValidMember(dto.getUserId(), dto.getPwd());
+//        log.debug("isValidMember : {}", isValidMember);
+//        if (isValidMember == false) return "mustache/auth/login";
+//        return "redirect:/";
+//    }
     
     @PostMapping("/logout")
     public void logout(HttpSession session) {

@@ -2,6 +2,7 @@ package com.portfolio.cms.webTest.member.vo;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
 @Getter
@@ -20,12 +21,12 @@ public class Member {
     
     private String role;
     
-    public static Member createUser(String userId, String pwd) {
+    public static Member createUser(String userId, String pwd, PasswordEncoder encoder) {
         return Member.builder()
                 .memberNo(null)
                 .memberId(userId)
-                .pwd(pwd)
-                .role("ROLE_USER")
+                .pwd(encoder.encode(pwd))
+                .role("USER")
                 .build();
     }
 }
